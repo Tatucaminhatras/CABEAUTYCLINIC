@@ -38,7 +38,7 @@ const SERVICE_DETAILS: Record<string, string> = {
   "Efeito Delineado": "Técnica que posiciona estrategicamente fios mais longos na linha superior, criando a ilusão de um delineado discreto e elegante.\nO efeito proporciona mais profundidade ao olhar, destacando o formato dos olhos sem perder leveza.\nIdeal para quem deseja definição marcante com acabamento sofisticado.\nUm olhar definido, sem precisar de maquiagem.",
   "Lash Lifting": "Procedimento que curva e eleva os fios naturais desde a raiz, proporcionando efeito de cílios mais longos e alinhados.\nO resultado é um olhar mais aberto e expressivo, mantendo total naturalidade sem extensões.\nDurabilidade média de 35 a 45 dias, variando conforme os cuidados e o ciclo natural dos fios.\nBeleza natural potencializada.",
   "Hidra Gloss": "Hidra Gloss Lips\nÉ um tratamento avançado de hidratação profunda e regeneração labial.\nMais do que estética, ele devolve aos seus lábios aquilo que o tempo, o clima e os hábitos diários retiram: maciez, viço e saúde.\n\nSua fórmula atua diretamente na revitalização do tecido labial, restaurando a hidratação de dentro para fora proporcionando lábios mais suaves, uniformes e naturalmente iluminados.\n\nE o mais importante:\nO Hidra Gloss é um dos poucos procedimentos estéticos capazes de promover hidratação real e duradoura, indo além da hidratação superficial que apenas a água oferece.\n\nResultado?\nLábios renovados, saudáveis e com aquele brilho sofisticado que dispensa filtros.\n\nAumenta os labios?\nNão. O Hidra Gloss Lips não é um procedimento de aumento labial.\nNo entanto, logo após a aplicação, é comum perceber um leve efeito de volume e contorno mais evidente. Isso acontece porque o sérum utilizado na hidratação contém Ácido Hialurônico um ativo amplamente conhecido por sua capacidade de reter água e proporcionar aspecto mais preenchido à pele.\n\nDiferente do preenchimento labial, o foco aqui não é volumizar, mas hidratar profundamente e revitalizar a estrutura dos lábios. O resultado é um efeito visual mais uniforme, viçoso e saudável, o que naturalmente cria a sensação de lábios mais definidos.\n\nBeleza real, sem exageros. Apenas lábios tratados, nutridos e naturalmente mais bonitos.\n\nTempo de duração\nA durabilidade do Hidra Gloss Lips pode chegar a até 2 meses, variando de acordo com o nível de ressecamento e os cuidados individuais de cada cliente.\nLábios mais ressecados tendem a absorver mais o ativo na primeira aplicação, o que torna o tratamento ainda mais necessário.\n\nPara resultados mais duradouros e consistentes, recomendamos um protocolo de 2 a 4 sessões, respeitando o intervalo ideal indicado pela profissional.\n\nO Hidra Gloss não é apenas um procedimento pontual, é um cuidado contínuo que mantém os lábios sempre hidratados, saudáveis e com aspecto naturalmente revitalizado.",
-  "Beauty Brows": "O Beauty Brows é um protocolo de reconstrução da sobrancelha desenvolvido para tratar falhas e estimular o crescimento dos fios que ainda têm potencial.\n\nRealizamos uma avaliação gratuita com tricoscópio, analisando a região e verificando se existem folículos ativos com potencial para produzir novos fios.\n\nNo protocolo trabalhamos com um pacote mínimo de 3 sessões, porque a continuidade é fundamental para acompanhar a resposta dos fios e avaliar a evolução."
+  "Beauty Brows - Protocolo de reconstrução": "O Beauty Brows é um protocolo de reconstrução da sobrancelha desenvolvido para tratar falhas e estimular o crescimento dos fios que ainda têm potencial.\n\nRealizamos uma avaliação gratuita com tricoscópio, analisando a região e verificando se existem folículos ativos com potencial para produzir novos fios.\n\nNo protocolo trabalhamos com um pacote mínimo de 3 sessões, porque a continuidade é fundamental para acompanhar a resposta dos fios e avaliar a evolução."
 };
 
 const CATALOGS = {
@@ -63,7 +63,7 @@ const CATALOGS = {
         name: "Sobrancelhas",
         services: [
           { name: "Brow Lamination", price: "Consulte", img: "https://pbs.twimg.com/media/HEL2dIpa8AA7hVe?format=jpg&name=large" },
-          { name: "Beauty Brows", price: "Consulte", img: "/images/beauty-brows.webp" },
+          { name: "Beauty Brows - Protocolo de reconstrução", price: "Consulte", img: "/images/beauty-brows.webp", cta: "Agendar Avaliação" },
           { name: "Design Personalizado", price: "Consulte", img: "http://pbs.twimg.com/media/HF5BvqGXcAAN9xa?format=jpg&name=large" },
           { name: "Design Personalizado com Tintura", price: "Consulte", img: "https://pbs.twimg.com/media/HF5Bvo2WgAAlDYd?format=jpg&name=large" },
           { name: "Combo: Brow Lamination + Lash Lifting", price: "Consulte", img: "https://pbs.twimg.com/media/HE2Syz_bMAA0PvN?format=jpg&name=large" }
@@ -240,7 +240,7 @@ const CatalogModal = ({ isOpen, onClose, catalogType }: { isOpen: boolean, onClo
                               <h4 className="text-[10px] md:text-base font-sans font-bold text-navy mb-1 leading-tight">{service.name}</h4>
                               <p className="text-rose-gold font-bold mb-2 md:mb-4 text-[8px] md:text-xs">{service.price}</p>
                               <button className="w-full py-2 md:py-3 bg-navy text-white rounded-lg text-[7px] md:text-[9px] uppercase tracking-[0.15em] font-bold group-hover:bg-rose-gold transition-colors">
-                                Agendar
+                                {service.cta ?? "Agendar"}
                               </button>
                             </div>
                           </motion.div>
@@ -554,7 +554,7 @@ export default function App() {
               title="Sobrancelhas"
               icon={Heart}
               delay={0.3}
-              items={["Brow Lamination", "Beauty Brows", "Design Personalizado", "Design Personalizado com Tintura", "Combo: Brow Lamination + Lash Lifting"]}
+              items={["Brow Lamination", "Beauty Brows - Protocolo de reconstrução", "Design Personalizado", "Design Personalizado com Tintura", "Combo: Brow Lamination + Lash Lifting"]}
               onShowDetails={openDetails}
             />
             <ServiceCard 
